@@ -65,74 +65,134 @@
     keymap {
         compatible = "zmk,keymap";
 
-/* 
- *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
- * ┌───┬───┤ W │ E │ R │ T │  │ Y │ U │ I │ O ├───┬───┐
- * │Tab│ Q ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ P │ - │
- * ├───┼───┤ S │ D │ F │ G │  │ H │ J │ K │ L ├───┼───┤
- * │Ctl│ A ├───┼───┼───┼───┤  ├───┼───┼───┼───┤;: │Ent│
- * ├───┼───┤ X │ C │ V │ B │  │ N │ M │,< │.> ├───┼───┤
- * │Sft│ Z ├───┴───┴───┴───┘  └───┴───┴───┴───┤/? │\_ │
- * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
- *             │Win│Alt│Esc│  │Spc│                    
- *             └───┴───┴───┘  └───┘                    
- */
         default_layer { //layer 0
             bindings = <
-&kp TAB     &kp Q    &kp W  &kp E     &kp R        &kp T                 &kp Y                   &kp U  &kp I      &kp O    &kp P      &kp MINUS
-&kp LCTRL   &lt 2 A  &kp S  &kp D     &kp F        &kp G                 &kp H                   &kp J  &kp K      &kp L    &kp SEMI   &kp RET
-&kp LSHIFT  &kp Z    &kp X  &kp C     &kp V        &kp B                 &kp N                   &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp BSLH
-                            &kp LGUI  &kp LALT     &lt_to_layer_0 1 ESC  &lt_to_layer_0 3 SPACE
+                &kp TAB     &kp Q    &kp W  &kp E     &kp R        &kp T                 &kp Y                   &kp U  &kp I      &kp O    &kp P        &kp MINUS
+                &kp LCTRL   &lt 2 A  &kp S  &kp D     &kp F        &kp G                 &kp H                   &kp J  &kp K      &kp L    &lt 3 SEMI   &kp RET
+                &kp LSHIFT  &kp Z    &kp X  &kp C     &kp V        &lt_to_layer_0 5 B    &kp N                   &kp M  &kp COMMA  &kp DOT  &kp SLASH    &kp BSLH
+                                            &kp LGUI  &kp LALT     &lt_to_layer_0 1 ESC  &lt_to_layer_0 4 SPACE
             >;
             //sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
+        /* layer 0
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
+         * ┌───┬───┤ W │ E │ R │ T │  │ Y │ U │ I │ O ├───┬───┐
+         * │Tab│ Q ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ P │ - │
+         * ├───┼───┤ S │ D │ F │ G │  │ H │ J │ K │ L ├───┼───┤
+         * │Ctl│ A ├───┼───┼───┼───┤  ├───┼───┼───┼───┤;: │Ent│
+         * ├───┼───┤ X │ C │ V │ B │  │ N │ M │,< │.> ├───┼───┤
+         * │Sft│ Z ├───┴───┴───┴───┘  └───┴───┴───┴───┤/? │\_ │
+         * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
+         *             │   │   │   │  │   │                    
+         *             └───┴───┴───┘  └───┘                    
+         */
 
-/* 
- *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
- * ┌───┬───┤ " │ # │ $ │ % │  │ & │ ' │ ( │ ) ├───┬───┐
- * │Tab│ ! ├───┼───┼───┼───┤  ├───┼───┼───┼───┤-= │^~ │
- * ├───┼───┤ @ │   │   │   │  │BSP│   │[{ │]} ├───┼───┤
- * │Ctl│ ` ├───┼───┼───┼───┤  ├───┼───┼───┼───┤;+ │:* │
- * ├───┼───┤   │   │   │   │  │   │   │,< │.> ├───┼───┤
- * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤/? │\_ │
- * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
- *             │Win│Alt│Esc│  │Spc│                    
- *             └───┴───┴───┘  └───┘                    
- */
         SYMBOL { //layer 1
             bindings = <
-&kp TAB     &kp EXCLAMATION &kp DQT   &kp HASH  &kp DLLR  &kp PRCNT    &kp AMPS     &kp SQT  &kp LPAR   &kp RPAR &kp MINUS  &kp CARET
-&kp LCTRL   &kp GRAVE       &kp AT    &trans    &trans    &trans       &kp BSPC     &trans   &kp LBKT   &kp RBKT &kp SEMI   &kp COLON
-&kp LSHIFT  &trans          &trans    &trans    &trans    &trans       &trans       &trans   &kp COMMA  &kp DOT  &kp SLASH  &kp BSLH
-                                      &kp LGUI  &kp LALT  &kp ESC      &kp SPACE
+                &kp TAB     &kp EXCLAMATION &kp DQT   &kp HASH  &kp DLLR  &kp PRCNT    &kp AMPS     &kp SQT  &kp LPAR   &kp RPAR &kp MINUS  &kp CARET
+                &kp LCTRL   &kp GRAVE       &kp AT    &trans    &trans    &trans       &kp BSPC     &trans   &kp LBKT   &kp RBKT &kp SEMI   &kp COLON
+                &kp LSHIFT  &trans          &trans    &trans    &trans    &trans       &trans       &trans   &kp COMMA  &kp DOT  &kp SLASH  &kp BSLH
+                                                      &trans    &trans    &trans       &trans
             >;
         };
+        /* layer 1
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
+         * ┌───┬───┤ " │ # │ $ │ % │  │ & │ ' │ ( │ ) ├───┬───┐
+         * │Tab│ ! ├───┼───┼───┼───┤  ├───┼───┼───┼───┤-= │^~ │
+         * ├───┼───┤ @ │   │   │   │  │BSP│   │[{ │]} ├───┼───┤
+         * │Ctl│ ` ├───┼───┼───┼───┤  ├───┼───┼───┼───┤;+ │:* │
+         * ├───┼───┤   │   │   │   │  │   │   │,< │.> ├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤/? │\_ │
+         * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
+         *             │   │   │   │  │   │                    
+         *             └───┴───┴───┘  └───┘                    
+         */
 
         NUM { //layer 2
             bindings = <
-&kp MINUS       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &kp CARET                    &kp CARET       &kp AMPERSAND     &kp TILDE          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS &kp RIGHT_PARENTHESIS
-&kp SLASH       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH              &kp DOLLAR            &kp PERCENT
-&kp LEFT_SHIFT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE       &kp BACKSLASH
-                                                  &trans           &trans        &trans                       &trans
+                &trans  &trans  &trans  &trans  &trans  &trans    &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans    &trans           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS   &kp STAR
+                &trans  &trans  &trans  &trans  &trans  &trans    &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOT    &trans
+                                        &trans  &trans  &trans    &trans
             >;
         };
+        /* layer 2
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
+         * ┌───┬───┤   │   │   │   │  │   │ 7 │ 8 │ 9 ├───┬───┐
+         * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤-= │   │
+         * ├───┼───┤   │   │   │   │  │   │ 4 │ 5 │ 6 ├───┼───┤
+         * │Ctl│N/A├───┼───┼───┼───┤  ├───┼───┼───┼───┤ + │ * │
+         * ├───┼───┤   │   │   │   │  │ 0 │ 1 │ 2 │ 3 ├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤ . │   │
+         * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
+         *             │   │   │   │  │   │                    
+         *             └───┴───┴───┘  └───┘                    
+         */
 
         MOUSE { //layer 3
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-                        &trans  &trans  &trans      &trans
+                &trans  &trans  &trans              &trans  &trans  &trans                   &trans  &trans    &trans    &trans    &trans    &trans
+                &trans  &trans  &kp LA(LEFT_ARROW)  &trans  &trans  &kp LA(RIGHT_ARROW)      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans    &trans
+                &trans  &trans  &trans              &trans  &trans  &trans                   &trans  &trans    &trans    &trans    &trans    &trans
+                                                    &trans  &trans  &trans                   &trans
             >;
         };
+        /* layer 3
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: Alt-Left
+         * ┌───┬───┤   │   │   │   │  │   │   │   │   ├───┬───┐  M2: 
+         * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │  M4: 
+         * ├───┼───┤M1 │M2 │M3 │M4 │  │   │MB1│MB3│MB2├───┼───┤  M3: Alt-Right
+         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤N/A│   │
+         * ├───┼───┤   │   │   │   │  │   │SCL│SCD│SCU├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤SCR│   │
+         * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
+         *             │   │   │   │  │   │                    
+         *             └───┴───┴───┘  └───┘                    
+         */
 
         FUNCTION { //layer 4
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans                   &trans   &trans      &trans
+                &trans  &trans  &kp F9  &kp F10 &kp F11 &kp F12     &trans  &kp LG(LC(LEFT_ARROW)) &kp LG(TAB)     &kp LG(LC(LEFT_ARROW))  &trans           &trans
+                &trans  &trans  &kp F5  &kp F6  &kp F7  &kp F8      &trans  &kp LEFT_ARROW         &kp DOWN_ARROW  &kp UP_ARROW            &kp RIGHT_ARROW  &trans
+                &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F4      &trans  &kp PG_DN              &kp END         &kp HOME                &kp PG_UP        &trans
+                                        &trans  &trans  &LA(TAB)    &trans
             >;
         };
+        /* layer 4
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: Alt-Tab
+         * ┌───┬───┤F9 │F10│F11│F12│  │   │M2 │M3 │M4 ├───┬───┐  M2: Win-Ctrl-Left
+         * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │  M4: Win-Tab
+         * ├───┼───┤F5 │F6 │F7 │F8 │  │   │ ← │ ↓ │ ↑ ├───┼───┤  M3: Win-Ctrl-Right
+         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ → │   │
+         * ├───┼───┤F1 │F2 │F3 │F4 │  │   │PDN│END│HOM├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤PUP│   │
+         * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
+         *             │   │   │M1 │  │N/A│                    
+         *             └───┴───┴───┘  └───┘                    
+         */
+        MANAGEMENT { //layer 5
+            bindings = <
+                &bootloader  &trans  &trans  &trans  &trans  &trans    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
+                &trans       &trans  &trans  &trans  &trans  &trans    &trans        &trans        &trans        &trans        &trans        &trans
+                &trans       &trans  &trans  &trans  &trans  &trans    &trans        &trans        &trans        &trans        &bt BT_CLR    &bt BT_CLR_ALL
+                                             &trans  &trans  &trans    &trans
+            >;
+        };
+        /* layer 4
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
+         * ┌───┬───┤   │   │   │   │  │BT1│BT2│BT3│BT4├───┬───┐
+         * │Tab│BTL├───┼───┼───┼───┤  ├───┼───┼───┼───┤BT5│   │
+         * ├───┼───┤   │   │   │   │  │   │   │   │   ├───┼───┤
+         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
+         * ├───┼───┤   │   │   │   │  │   │   │   │   ├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤BCL│BCA│
+         * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
+         *             │   │   │   │  │   │                    
+         *             └───┴───┴───┘  └───┘                    
+         */
     };
 };
+//&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+//&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+//&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+//                        &trans  &trans  &trans    &trans
