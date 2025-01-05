@@ -23,5 +23,6 @@
 #     shield: bots40_left
 #   - board: seeeduino_xiao_ble
 #     shield: bots40_right
+---
 board: ["seeeduino_xiao_ble"]
 shield: ["bots40_R", "bots40_L", "settings_reset"]
