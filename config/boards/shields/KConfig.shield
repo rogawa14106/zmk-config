@@ -1,0 +1,5 @@
+config SHIELD_BOTS40_R
+    def_bool $(shields_list_contains,bots40_R)
+
+config SHIELD_BOTS40_L
+    def_bool $(shields_list_contains,bots40_L)

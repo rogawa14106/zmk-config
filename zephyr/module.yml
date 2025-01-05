@@ -1,3 +1,4 @@
+# name: bots40
 build:
   settings:
-    board_root: .
+    board_root: config

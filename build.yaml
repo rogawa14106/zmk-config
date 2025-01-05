@@ -20,6 +20,6 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: waterfowl_left
+    shield: bots40_left
   - board: seeeduino_xiao_ble
-    shield: waterfowl_right
+    shield: bots40_right
