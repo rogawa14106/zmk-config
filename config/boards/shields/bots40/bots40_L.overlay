@@ -10,3 +10,5 @@
             , <&xiao_d 6 GPIO_ACTIVE_HIGH>
             ;
 };
+
+&xiao_serial { status = "disabled"; };
