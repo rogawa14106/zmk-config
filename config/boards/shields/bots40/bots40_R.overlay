@@ -62,5 +62,3 @@
         scroll-layers = <3>;
     };
 };
-
-&xiao_serial { status = "disabled"; };
