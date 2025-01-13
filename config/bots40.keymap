@@ -138,12 +138,13 @@
             >;
         };
         /* layer 3
-         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: Alt-Left ┌───┬───┤   │   │   │   │  │   │   │   │   ├───┬───┐  M2: 
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: Alt-Left 
+         * ┌───┬───┤   │   │   │   │  │   │   │   │   ├───┬───┐  M2: 
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │  M4: 
          * ├───┼───┤M1 │M2 │M3 │M4 │  │   │MB1│MB3│MB2├───┼───┤  M3: Alt-Right
          * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤N/A│   │
-         * ├───┼───┤   │   │   │   │  │   │SCL│SCD│SCU├───┼───┤
-         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤SCR│   │
+         * ├───┼───┤   │   │   │   │  │SCL│SCD│SCU│SCR├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │   │                    
          *             └───┴───┴───┘  └───┘                    
@@ -151,9 +152,9 @@
 
         FUNCTION { //layer 4
             bindings = <
-                &trans  &trans  &kp F9  &kp F10 &kp F11 &kp F12        &trans  &kp LG(LC(LEFT_ARROW)) &kp LG(TAB)     &kp LG(LC(LEFT_ARROW))  &trans           &trans
-                &trans  &trans  &kp F5  &kp F6  &kp F7  &kp F8           &kp LEFT_ARROW         &kp DOWN_ARROW  &kp UP_ARROW            &kp RIGHT_ARROW  &trans &trans
-                &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F4         &trans  &kp PG_DN              &kp END         &kp HOME                &kp PG_UP        &trans
+                &trans  &trans  &kp F9  &kp F10 &kp F11 &kp F12        &trans          &kp LG(LC(LEFT_ARROW)) &kp LG(TAB)     &kp LG(LC(LEFT_ARROW))  &trans     &trans
+                &trans  &trans  &kp F5  &kp F6  &kp F7  &kp F8         &kp LEFT_ARROW  &kp DOWN_ARROW         &kp UP_ARROW    &kp RIGHT_ARROW         &trans     &trans
+                &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F4         &trans          &kp PG_DN              &kp END         &kp HOME                &kp PG_UP  &trans
                                         &trans  &trans  &kp LA(TAB)    &trans
             >;
         };
