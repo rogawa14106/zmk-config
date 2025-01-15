@@ -70,8 +70,8 @@
         default_layer { //layer 0
             bindings = <
                 &kp TAB             &kp Q    &kp W  &kp E     &kp R     &kp T        &kp Y        &kp U  &kp I         &kp O       &kp P         &kp JP_MINUS
-                &mt LSHIFT JP_ZKHK  &lt 2 A  &kp S  &kp D     &lt 3 F   &kp G        &kp H        &kp J  &kp K         &kp L       &lt 4 SEMI    &kp RET
-                &kp LCTRL           &kp Z    &kp X  &kp C     &kp V     &lt 2 B      &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &kp JP_SLASH  &kp JP_YEN
+                &mt LSHIFT JP_ZKHK  &lt 2 A  &kp S  &kp D     &lt 3 F   &kp G        &kp H        &kp J  &kp K         &kp L       &kp JP_SEMI   &kp RET
+                &kp LCTRL           &kp Z    &kp X  &kp C     &kp V     &kp B        &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &kp JP_SLASH  &kp JP_BSLH
                                                     &kp LGUI  &kp LALT  &lt 1 ESC    &lt 4 SPACE
             >;
             //sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -89,7 +89,7 @@
          *             └───┴───┴───┘  └───┘                    
          */
 
-        SYMBOL { //layer 1 |
+        SYMBOL { //layer 1
             bindings = <
                 &trans  &kp JP_EXCL &kp JP_DQT  &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT    &kp JP_AMPS     &kp JP_SQT  &kp JP_LPAR  &kp JP_RPAR &kp JP_MINUS  &kp JP_CARET
                 &trans  &trans      &kp JP_AT   &trans       &trans       &trans          &kp BSPC        &trans      &kp JP_LBKT  &kp JP_RBKT &kp JP_SEMI   &kp JP_COLON
@@ -118,7 +118,7 @@
                                         &trans  &trans  &trans    &trans
             >;
         };
-        /* layer 2
+        /* layer 2(scroll)
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
          * ┌───┬───┤   │   │   │   │  │   │ 7 │ 8 │ 9 ├───┬───┐
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
@@ -127,15 +127,15 @@
          * ├───┼───┤   │   │   │   │  │ 0 │ 1 │ 2 │ 3 ├───┼───┤
          * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤ . │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
-         *             │   │   │   │  │N/A│                    
+         *             │   │   │   │  │   │                    
          *             └───┴───┴───┘  └───┘                    
          */
 
         MOUSE { //layer 3
             bindings = <
-                &trans  &trans  &trans              &trans               &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
-                &trans  &trans  &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &trans  &trans    &trans          &mkp MB1        &mkp MB3      &mkp MB2         &trans  &trans
-                &trans  &trans  &trans              &trans               &trans  &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
+                &trans  &trans  &trans              &trans               &trans  &trans    &trans          &trans          &trans        &trans           &trans   &trans
+                &trans  &trans  &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &trans  &trans    &trans          &trans          &mkp MB1      &mkp MB3         &mkp MB2 &trans
+                &trans  &trans  &trans              &trans               &trans  &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans   &trans
                                                     &trans               &trans  &trans    &trans
             >;
         };
@@ -143,8 +143,8 @@
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: 
          * ┌───┬───┤   │   │   │   │  │   │   │   │   ├───┬───┐  M2: Alt-Left 
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │  M3: Alt-Right
-         * ├───┼───┤   │M2 │M3 │N/A│  │   │MB1│MB3│MB2├───┼───┤  M4: 
-         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
+         * ├───┼───┤   │M2 │M3 │N/A│  │   │   │MB1│MB3├───┼───┤  M4: 
+         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤MB2│   │
          * ├───┼───┤   │   │   │   │  │SCL│SCD│SCU│SCR├───┼───┤
          * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
@@ -154,15 +154,15 @@
 
         FUNCTION { //layer 4
             bindings = <
-                &trans  &trans  &kp F9  &kp F10 &kp F11 &kp F12        &trans          &kp LG(LC(LEFT_ARROW)) &kp LG(TAB)     &kp LG(LC(LEFT_ARROW))  &trans     &trans
-                &trans  &trans  &kp F5  &kp F6  &kp F7  &kp F8         &kp LEFT_ARROW  &kp DOWN_ARROW         &kp UP_ARROW    &kp RIGHT_ARROW         &trans     &trans
-                &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F4         &trans          &kp PG_DN              &kp END         &kp HOME                &kp PG_UP  &trans
+                &trans  &trans  &kp F9  &kp F10 &kp F11 &kp F12        &kp LG(LC(LEFT_ARROW)) &trans &kp LG(TAB)  &kp LG(LC(RIGHT_ARROW))  &trans           &trans
+                &trans  &trans  &kp F5  &kp F6  &kp F7  &kp F8         &kp LEFT_ARROW         &kp DOWN_ARROW      &kp UP_ARROW             &kp RIGHT_ARROW  &trans  &trans
+                &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F4         &kp PG_DN              &kp END             &kp HOME                 &kp PG_UP        &trans  &trans
                                         &trans  &trans  &kp LA(TAB)    &trans
             >;
         };
         /* layer 4
-         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: Alt-Tab
-         * ┌───┬───┤F9 │F10│F11│F12│  │   │M2 │M3 │M4 ├───┬───┐  M2: Win-Ctrl-Left
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: 
+         * ┌───┬───┤F9 │F10│F11│F12│  │M2 │   │M3 │M4 ├───┬───┐  M2: Win-Ctrl-Left
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │  M4: Win-Tab
          * ├───┼───┤F5 │F6 │F7 │F8 │  │   │ ← │ ↓ │ ↑ ├───┼───┤  M3: Win-Ctrl-Right
          * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ → │   │
