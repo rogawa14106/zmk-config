@@ -69,10 +69,10 @@
 
         default_layer { //layer 0
             bindings = <
-                &kp TAB             &kp Q    &kp W  &kp E     &kp R     &kp T        &kp Y        &kp U  &kp I         &kp O       &kp P          &kp JP_MINUS
-                &mt LSHIFT JP_ZKHK  &lt 2 A  &kp S  &kp D     &lt 3 F   &kp G        &kp H        &kp J  &kp K         &kp L       &lt 3 JP_SEMI  &kp RET
-                &kp LCTRL           &kp Z    &kp X  &kp C     &kp V     &kp B        &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &kp JP_SLASH   &kp JP_BSLH
-                                                    &kp LGUI  &kp LALT  &lt 1 ESC    &lt 4 SPACE
+                &kp TAB           &kp Q    &kp W  &kp E      &kp R     &kp T        &kp Y        &kp U  &kp I         &kp O       &kp P          &kp JP_MINUS
+                &mt LALT JP_ZKHK  &lt 4 A  &kp S  &lt 2 D    &lt 3 F   &kp G        &kp H        &kp J  &kp K         &kp L       &lt 2 JP_SEMI  &kp RET
+                &kp LGUI          &kp Z    &kp X  &kp C      &kp V     &kp B        &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &kp JP_SLASH   &kp JP_BSLH
+                                                  &lt 5 ESC  &kp LCTRL &kp SHIFT    &lt 1 SPACE
             >;
             //sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -92,8 +92,8 @@
         SYMBOL { //layer 1
             bindings = <
                 &trans  &kp JP_EXCL &kp JP_DQT  &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT    &kp JP_AMPS     &kp JP_SQT  &kp JP_LPAR  &kp JP_RPAR &kp JP_MINUS  &kp JP_CARET
-                &trans  &trans      &kp JP_AT   &trans       &trans       &trans          &kp BSPC        &trans      &kp JP_LBKT  &kp JP_RBKT &kp JP_SEMI   &kp JP_COLON
-                &trans  &trans      &trans      &trans       &trans       &trans          &trans          &trans      &kp JP_COMMA &kp JP_DOT  &kp JP_SLASH  &kp JP_YEN
+                &trans  &none       &kp JP_AT   &none        &none        &none           &kp BSPC        &kp DEL     &kp JP_LBKT  &kp JP_RBKT &kp JP_SEMI   &kp JP_COLON
+                &trans  &none       &none       &none        &none        &none           &none           &none       &kp JP_COMMA &kp JP_DOT  &kp JP_SLASH  &kp JP_YEN
                                                 &trans       &trans       &trans          &trans
             >;
         };
@@ -112,10 +112,10 @@
 
         NUM { //layer 2
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &trans    &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans      &trans
-                &trans  &trans  &trans  &trans  &trans  &trans    &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans      &trans
-                &trans  &trans  &trans  &trans  &trans  &trans    &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_DOT  &trans
-                                        &trans  &trans  &trans    &trans
+                &trans  &none  &none  &none   &none   &none     &none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none       &none
+                &trans  &none  &none  &none   &none   &none     &none         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none       &none
+                &trans  &none  &none  &none   &none   &none     &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_DOT  &none
+                                      &trans  &trans  &trans    &trans
             >;
         };
         /* layer 2(scroll)
@@ -133,10 +133,10 @@
 
         MOUSE { //layer 3
             bindings = <
-                &trans  &trans  &trans              &trans               &trans  &trans    &trans          &trans          &trans        &trans           &trans   &trans
-                &trans  &trans  &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &trans  &trans    &trans          &trans          &mkp MB1      &mkp MB3         &mkp MB2 &trans
-                &trans  &trans  &trans              &trans               &trans  &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans   &trans
-                                                    &trans               &trans  &trans    &trans
+                &trans  &none  &none               &none                &none   &none     &none           &none           &mkp MB3      &none            &none  &none
+                &trans  &none  &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &none   &none     &none           &none           &mkp MB1      &mkp MB2         &none  &none
+                &trans  &none  &none               &none                &none   &none     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none  &none
+                                                   &trans               &trans  &trans    &trans
             >;
         };
         /* layer 3
@@ -174,10 +174,10 @@
          */
         MANAGEMENT { //layer 5
             bindings = <
-                &bootloader  &trans  &trans  &trans  &trans  &trans    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
-                &trans       &trans  &trans  &trans  &trans  &trans    &trans        &trans        &trans        &trans        &trans        &trans
-                &trans       &trans  &trans  &trans  &trans  &trans    &trans        &trans        &trans        &trans        &bt BT_CLR    &bt BT_CLR_ALL
-                                             &trans  &trans  &trans    &trans
+                &bootloader  &none  &none  &none   &none   &none     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+                &trans       &none  &none  &none   &none   &none     &none         &none         &none         &none         &none         &none
+                &trans       &none  &none  &none   &none   &none     &none         &none         &none         &none         &bt BT_CLR    &bt BT_CLR_ALL
+                                           &trans  &trans  &trans    &trans
             >;
         };
         /* layer 5
