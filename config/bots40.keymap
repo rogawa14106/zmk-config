@@ -9,6 +9,19 @@
 //#define SCROLL 5
 //#define NUM 6
 
+#define MKP(mod, tap, macro_label) macro_label: macro_label {\
+    label = macro_label;\
+    compatible = "zmk,behavior-macro";\
+    //wait-ms = <50>;\
+    #binding-cells = <0>;\
+    bindings\
+        = <&macro_press &kp mod>\
+        , <&macro_tap &kp tap>\
+        , <&macro_release &kp mod>\
+        ;\
+}
+
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -51,6 +64,7 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+        MKP(LSHFT, N1, "JP_EXCL");
     };
 
     behaviors {
@@ -91,10 +105,10 @@
 
         SYMBOL { //layer 1
             bindings = <
-                &trans  &kp JP_EXCL &kp JP_DQT  &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT    &kp JP_AMPS     &kp JP_SQT  &kp JP_LPAR  &kp JP_RPAR &kp JP_MINUS  &kp JP_CARET
-                &trans  &none       &kp JP_AT   &none        &none        &none           &kp BSPC        &kp DEL     &kp JP_LBKT  &kp JP_RBKT &kp JP_SEMI   &kp JP_COLON
-                &trans  &none       &none       &none        &none        &none           &none           &none       &kp JP_COMMA &kp JP_DOT  &kp JP_SLASH  &kp JP_YEN
-                                                &trans       &trans       &trans          &trans
+                &trans  &kp JP_EXCL  &kp JP_DQT  &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT    &kp JP_AMPS     &kp JP_SQT  &kp JP_LPAR  &kp JP_RPAR &kp JP_COLON  &kp JP_CARET
+                &trans  &none        &kp JP_AT   &none        &none        &none           &kp BSPC        &kp DEL     &kp JP_LBKT  &kp JP_RBKT &kp JP_SEMI   &none
+                &trans  &none        &none       &none        &none        &none           &none           &none       &kp JP_COMMA &kp JP_DOT  &kp JP_SLASH  &kp JP_YEN
+                                                 &trans       &trans       &trans          &trans
             >;
         };
         /* layer 1
@@ -112,17 +126,17 @@
 
         NUM { //layer 2
             bindings = <
-                &trans  &none  &none  &none   &none   &none     &none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none       &none
-                &trans  &none  &none  &none   &none   &none     &none         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none       &none
-                &trans  &none  &none  &none   &none   &none     &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_DOT  &none
-                                      &trans  &trans  &trans    &trans
+                &trans  &none  &none  &none   &none       &none     &none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none       &none
+                &trans  &none  &none  &none   &kp JP_DOT  &none     &none         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none       &none
+                &trans  &none  &none  &none   &none       &none     &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_DOT  &none
+                                      &trans  &trans      &trans    &trans
             >;
         };
         /* layer 2(scroll)
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
          * ┌───┬───┤   │   │   │   │  │   │ 7 │ 8 │ 9 ├───┬───┐
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
-         * ├───┼───┤   │   │   │   │  │   │ 4 │ 5 │ 6 ├───┼───┤
+         * ├───┼───┤   │   │ . │   │  │   │ 4 │ 5 │ 6 ├───┼───┤
          * │Ctl│N/A├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
          * ├───┼───┤   │   │   │   │  │ 0 │ 1 │ 2 │ 3 ├───┼───┤
          * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤ . │   │
@@ -154,16 +168,16 @@
 
         FUNCTION { //layer 4
             bindings = <
-                &trans  &none  &kp F7  &kp F8  &kp F9  &kp F12    &kp LG(LC(LEFT_ARROW)) &kp LG(LC(F4))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &none  &none
-                &trans  &none  &kp F4  &kp F5  &kp F6  &kp F11    &kp LEFT_ARROW         &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW          &none  &none
-                &trans  &none  &kp F1  &kp F2  &kp F3  &kp F10    &kp PG_DN              &kp END         &kp HOME       &kp PG_UP                &none  &none
+                &trans  &none  &kp F7  &kp F8  &kp F9  &kp F12    &kp LG(LC(LEFT_ARROW)) &kp LG(LC(F4))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &kp PSCRN  &none
+                &trans  &none  &kp F4  &kp F5  &kp F6  &kp F11    &kp LEFT_ARROW         &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW          &kp INS    &none
+                &trans  &none  &kp F1  &kp F2  &kp F3  &kp F10    &kp PG_DN              &kp END         &kp HOME       &kp PG_UP                &none      &none
                                        &trans  &trans  &trans     &trans
             >;
         };
         /* layer 4
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: Win-Ctrl-Left
          * ┌───┬───┤F9 │F10│F11│F12│  │M1 │M2 │M3 │M4 ├───┬───┐  M2: Win-Ctrl-F4
-         * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │  M4: Win-Ctrl-D
+         * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤Prs│   │  M4: Win-Ctrl-D
          * ├───┼───┤F5 │F6 │F7 │F8 │  │   │ ← │ ↓ │ ↑ ├───┼───┤  M3: Win-Ctrl-Right
          * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ → │   │
          * ├───┼───┤F1 │F2 │F3 │F4 │  │   │PDN│END│HOM├───┼───┤
