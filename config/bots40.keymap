@@ -58,6 +58,21 @@
                 , <&macro_release &kp LSHFT>
                 ;
         };
+         cg_kp: cg_kp {
+            label = "CG_KP";
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LCTRL>
+                , <&macro_param_1to1>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -167,9 +182,9 @@
 
         FUNCTION { //layer 4
             bindings = <
-                &trans  &none  &kp F7  &kp F8  &kp F9  &kp F12    &kp LG(LC(LEFT_ARROW)) &kp LG(LC(F4))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &kp PSCRN  &none
-                &trans  &none  &kp F4  &kp F5  &kp F6  &kp F11    &kp LEFT_ARROW         &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW          &kp INS    &none
-                &trans  &none  &kp F1  &kp F2  &kp F3  &kp F10    &kp PG_DN              &kp END         &kp HOME       &kp PG_UP                &none      &none
+                &trans  &none  &kp F7  &kp F8  &kp F9  &kp F12    &cg_kp LEFT_ARROW &cg_kp F4       &cg_kp D      &cg_kp RIGHT_ARROW  &kp PSCRN  &none
+                &trans  &none  &kp F4  &kp F5  &kp F6  &kp F11    &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW     &kp INS    &none
+                &trans  &none  &kp F1  &kp F2  &kp F3  &kp F10    &kp PG_DN         &kp END         &kp HOME      &kp PG_UP           &none      &none
                                        &trans  &trans  &trans     &trans
             >;
         };
