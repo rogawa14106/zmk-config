@@ -9,17 +9,17 @@
 //#define SCROLL 5
 //#define NUM 6
 
-#define MKP(mod, tap, macro_label) macro_label: macro_label {\
-    label = "macro_label";\
-    compatible = "zmk,behavior-macro";\
-    //wait-ms = <50>;\
-    #binding-cells = <0>;\
-    bindings\
-        = <&macro_press &kp mod>\
-        , <&macro_tap &kp tap>\
-        , <&macro_release &kp mod>\
-        ;\
-}
+#define MKP(mod, tap, macro_label) #macro_label: #macro_label {\
+        label = "#macro_label";\
+        compatible = "zmk,behavior-macro";\
+        //wait-ms = <50>;\
+        #binding-cells = <0>;\
+        bindings\
+            = <&macro_press &kp mod>\
+            , <&macro_tap &kp tap>\
+            , <&macro_release &kp mod>\
+            ;\
+    }
 
 
 &mt {
@@ -64,7 +64,7 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
-        MKP(LSHFT, N1, JP_EXCL);
+        MKP(LSHFT, N1, jp_excel);
     };
 
     behaviors {
@@ -105,7 +105,7 @@
 
         SYMBOL { //layer 1
             bindings = <
-                &trans  &kp JP_EXCL  &kp JP_DQT  &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT    &kp JP_AMPS     &kp JP_SQT  &kp JP_LPAR  &kp JP_RPAR &kp JP_COLON  &kp JP_CARET
+                &trans  &jp_excel  &kp JP_DQT  &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT    &kp JP_AMPS     &kp JP_SQT  &kp JP_LPAR  &kp JP_RPAR &kp JP_COLON  &kp JP_CARET
                 &trans  &none        &kp JP_AT   &none        &none        &none           &kp BSPC        &kp DEL     &kp JP_LBKT  &kp JP_RBKT &kp JP_SEMI   &none
                 &trans  &none        &none       &none        &none        &none           &none           &none       &kp JP_COMMA &kp JP_DOT  &kp JP_SLASH  &kp JP_YEN
                                                  &trans       &trans       &trans          &trans
