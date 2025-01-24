@@ -10,7 +10,7 @@
 //#define NUM 6
 
 #define MKP(mod, tap, macro_label) macro_label: macro_label {\
-    label = macro_label;\
+    label = "macro_label";\
     compatible = "zmk,behavior-macro";\
     //wait-ms = <50>;\
     #binding-cells = <0>;\
@@ -64,7 +64,7 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
-        MKP(LSHFT, N1, "JP_EXCL");
+        MKP(LSHFT, N1, JP_EXCL);
     };
 
     behaviors {
