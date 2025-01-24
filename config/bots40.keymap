@@ -10,7 +10,7 @@
 //#define NUM 6
 
 //wait-ms = <50>;\
-#define MKP(mod, tap, macro_label) s_##mod_##tap: s_##mod_##tap {\
+#define MKP(mod, tap, macro_label) #mod_##tap: #mod_##tap {\
         label = macro_label;\
         compatible = "zmk,behavior-macro";\
         #binding-cells = <0>;\
@@ -103,7 +103,7 @@
          *             └───┴───┴───┘  └───┘                    
          */
 
-        SYMBOL { //layer 1
+        SYMBOL { //layer 1 //s_LSHFT_N1
             bindings = <
                 &trans  &jp_excel  &kp JP_DQT  &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT    &kp JP_AMPS     &kp JP_SQT  &kp JP_LPAR  &kp JP_RPAR &kp JP_COLON  &kp JP_CARET
                 &trans  &none        &kp JP_AT   &none        &none        &none           &kp BSPC        &kp DEL     &kp JP_LBKT  &kp JP_RBKT &kp JP_SEMI   &none
