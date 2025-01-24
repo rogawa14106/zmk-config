@@ -10,7 +10,7 @@
 //#define NUM 6
 
 //wait-ms = <50>;\
-#define MKP(mod, tap, macro_label) #mod_##tap: #mod_##tap {\
+#define MKP(mod, tap, macro_label) m_##mod_##tap: m_##mod_##tap {\
         label = macro_label;\
         compatible = "zmk,behavior-macro";\
         #binding-cells = <0>;\
