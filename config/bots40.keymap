@@ -51,8 +51,9 @@
             //wait-ms = <50>;
             #binding-cells = <1>;
             bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp &macro_param_1to1>
+                = <&macro_param_1to1>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
                 , <&macro_release &kp LSHFT>
                 ;
         };
