@@ -10,14 +10,14 @@
 //#define NUM 6
 
 //wait-ms = <50>;\
-#define MKP(mod, tap, macro_label) m_##mod_##tap: m_##mod_##tap {\
+#define SKP(tap, macro_label) s_##tap: s_##tap {\
         label = macro_label;\
         compatible = "zmk,behavior-macro";\
         #binding-cells = <0>;\
         bindings\
-            = <&macro_press &kp mod>\
+            = <&macro_press &kp LSHFT>\
             , <&macro_tap &kp tap>\
-            , <&macro_release &kp mod>\
+            , <&macro_release &kp LSHFT>\
             ;\
     }
 
@@ -64,7 +64,7 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
-        MKP(LSHFT, N1, "jp_excel");
+        SKP(N1, "jp_excel");
     };
 
     behaviors {
