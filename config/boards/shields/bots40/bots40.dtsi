@@ -42,6 +42,12 @@
                 ;
     };
 
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
     //left_encoder: encoder_left {
     //    compatible = "alps,ec11";
     //    a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
