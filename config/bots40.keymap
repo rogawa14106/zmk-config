@@ -78,44 +78,44 @@
 
         default_layer { //layer 0
             bindings = <
-                &kp TAB           &kp Q    &kp W  &kp E      &kp R     &kp T         &kp Y        &kp U  &lt 2 I       &kp O       &kp P           &kp JP_MINUS
-                &mt LALT JP_ZKHK  &lt 4 A  &kp S  &lt 2 D    &lt 3 F   &kp G         &kp H        &kp J  &kp K         &kp L       &lt 3 JP_SEMI   &kp RET
-                &kp LGUI          &kp Z    &kp X  &kp C      &kp V     &kp B         &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &lt 3 JP_SLASH  &kp JP_BSLH
-                                                  &lt 5 ESC  &kp LCTRL &kp LSHIFT    &lt 1 SPACE
+                &kp TAB           &kp Q    &kp W  &kp E      &kp R     &kp T            &kp Y        &kp U  &lt 2 I       &kp O       &kp P           &kp BSPC
+                &mt LALT JP_ZKHK  &lt 4 A  &kp S  &kp D      &lt 3 F   &kp G            &kp H        &kp J  &kp K         &kp L       &lt 2 JP_MINUS  &kp RET
+                &kp LGUI          &kp Z    &kp X  &kp C      &kp V     &kp B            &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &lt 3 JP_SLASH  &kp DEL
+                                                  &lt 5 ESC  &kp LCTRL &mt LSHIFT ESC   &lt 1 SPACE
             >;
             //sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
         /* layer 0
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
          * ┌───┬───┤ W │ E │ R │ T │  │ Y │ U │ I │ O ├───┬───┐
-         * │Tab│ Q ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ P │-= │
-         * ├───┼───┤ S │ D │ F │ G │  │ H │ J │ K │ L ├───┼───┤
-         * │Z/H│ A ├───┼───┼───┼───┤  ├───┼───┼───┼───┤;+ │Ent│
-         * ├───┼───┤ X │ C │ V │ B │  │ N │ M │,< │.> ├───┼───┤
-         * │GUI│ Z ├───┴───┴───┴───┘  └───┴───┴───┴───┤/? │\_ │
-         * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
-         *             │Esc│Ctl│Sft│  │Spc│                    
+         * │Tab│ Q ├───┼───┼─3─┼───┤  ├───┼───┼───┼───┤ P │BS │
+         * ├Alt┼─4─┤ S │ D │ F │ G │  │ H │ J │ K │ L ├─2─┼───┤
+         * │Z/H│ A ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ - │Ent
+         * ├───┼───┤ X │ C │ V │ B │  │ N │ M │ , │ . ├─3─┼───┤
+         * │GUI│ Z ├───┴───┴───┴───┘  └───┴───┴───┴───┤ / │Del│
+         * └───┴───┘   ┌─5─┬───┬Sft┐  ┌─1─┐           └───┴───┘
+         *             │Esc│Ctl│Esc│  │Spc│                    
          *             └───┴───┴───┘  └───┘                    
          */
 
         SYMBOL { //layer 1 //s_LSHFT_N1
             bindings = <
-                &trans  &s_kp N1  &s_kp N2  &s_kp N3  &s_kp N4  &s_kp N5    &s_kp N6     &s_kp N7  &s_kp N8     &s_kp N9     &kp JP_COLON  &kp JP_CARET
-                &trans  &none     &kp JP_AT &none     &none     &none       &kp BSPC     &kp DEL   &kp JP_LBKT  &kp JP_RBKT  &kp JP_SEMI   &none
-                &trans  &none     &none     &none     &none     &none       &none        &none     &kp JP_COMMA &kp JP_DOT   &kp JP_SLASH  &kp JP_YEN
-                                            &trans    &trans    &trans      &trans
+                &trans  &none     &s_kp N2     &s_kp N3       &s_kp N4       &s_kp N5          &s_kp N6       &s_kp N7        &s_kp N8       &s_kp N9      &s_kp JP_BSLH   &none
+                &trans  &s_kp N1  &kp JP_AT    &kp JP_LBKT    &kp JP_RBKT    &kp JP_CARET      &kp JP_SEMI    &kp JP_COLON    &kp JP_BSLH    &s_kp JP_YEN  &s_kp JP_MINUS  &none
+                &trans  &none     &s_kp JP_AT  &s_kp JP_LBKT  &s_kp JP_RBKT  &s_kp JP_CARET    &s_kp JP_SEMI  &k_kp JP_COLON  &s_kp JP_COMMA &s_kp JP_DOT  &s_kp JP_SLASH  &none
+                                               &trans         &trans         &trans            &trans
             >;
         };
         /* layer 1
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
          * ┌───┬───┤ " │ # │ $ │ % │  │ & │ ' │ ( │ ) ├───┬───┐
-         * │Tab│ ! ├───┼───┼───┼───┤  ├───┼───┼───┼───┤-= │^~ │
-         * ├───┼───┤@` │   │   │   │  │BSP│   │[{ │]} ├───┼───┤
-         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤;+ │   │
-         * ├───┼───┤   │   │   │   │  │   │   │,< │.> ├───┼───┤
-         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤/? │\_ │
+         * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ _ │   │
+         * ├───┼───┤ @ │ [ │ ] │ ^ │  │ ; │ : │ \ │ | ├───┼───┤
+         * │   │ ! ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ = │   │
+         * ├───┼───┤ ` │ { │ } │ ~ │  │ + │ * │ < │ > ├───┼───┤
+         * │   │   ├───┴───┴───┴───┘  └───┴───┴───┴───┤ ? │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
-         *             │   │   │N/A│  │   │                    
+         *             │   │   │   │  │   │                    
          *             └───┴───┴───┘  └───┘                    
          */
 
@@ -131,10 +131,10 @@
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
          * ┌───┬───┤   │   │   │   │  │   │ 7 │ 8 │ 9 ├───┬───┐
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
-         * ├───┼───┤   │   │ . │   │  │   │ 4 │ 5 │ 6 ├───┼───┤
+         * ├───┼───┤   │   │ . │   │  │ 0 │ 4 │ 5 │ 6 ├───┼───┤
          * │Ctl│N/A├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
-         * ├───┼───┤   │   │   │   │  │ 0 │ 1 │ 2 │ 3 ├───┼───┤
-         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤ . │   │
+         * ├───┼───┤   │   │   │   │  │   │ 1 │ 2 │ 3 ├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │   │                    
          *             └───┴───┴───┘  └───┘                    
@@ -150,11 +150,11 @@
         };
         /* layer 3
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: 
-         * ┌───┬───┤   │   │   │   │  │   │   │   │   ├───┬───┐  M2: Alt-Left 
+         * ┌───┬───┤   │   │   │   │  │   │   │MB3│   ├───┬───┐  M2: Alt-Left 
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │  M3: Alt-Right
-         * ├───┼───┤   │M2 │M3 │N/A│  │   │   │MB1│MB3├───┼───┤  M4: 
-         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤MB2│   │
-         * ├───┼───┤   │   │   │   │  │SCL│SCD│SCU│SCR├───┼───┤
+         * ├───┼───┤   │M2 │M3 │N/A│  │   │   │MB1│MB2├───┼───┤  M4: 
+         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
+         * ├───┼───┤   │   │   │   │  │MML│MMD│MMU│MMR├───┼───┤
          * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │   │                    
@@ -173,10 +173,10 @@
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: Win-Ctrl-Left
          * ┌───┬───┤F9 │F10│F11│F12│  │M1 │M2 │M3 │M4 ├───┬───┐  M2: Win-Ctrl-F4
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤Prs│   │  M4: Win-Ctrl-D
-         * ├───┼───┤F5 │F6 │F7 │F8 │  │   │ ← │ ↓ │ ↑ ├───┼───┤  M3: Win-Ctrl-Right
-         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ → │   │
-         * ├───┼───┤F1 │F2 │F3 │F4 │  │   │PDN│END│HOM├───┼───┤
-         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤PUP│   │
+         * ├───┼───┤F5 │F6 │F7 │F8 │  │ ← │ ↓ │ ↑ │ → ├───┼───┤  M3: Win-Ctrl-Right
+         * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤Ins│   │
+         * ├───┼───┤F1 │F2 │F3 │F4 │  │Pdn│End│Hom│Pup├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │N/A│                    
          *             └───┴───┴───┘  └───┘                    
