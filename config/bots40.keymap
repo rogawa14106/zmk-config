@@ -123,7 +123,7 @@
             bindings = <
                 &trans  &none  &none         &none         &none         &none     &none  &none         &none          &none         &none  &none
                 &trans  &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none     &none  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &none  &none
-                &trans  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &non     &none  &kp NUMBER_0  &s_kp JP_COMMA &s_kp JP_DOT  &none  &none
+                &trans  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none    &none  &kp NUMBER_0  &s_kp JP_COMMA &s_kp JP_DOT  &none  &none
                                &trans        &trans        &trans                  &trans
             >;
         };
