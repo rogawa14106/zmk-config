@@ -87,11 +87,15 @@
 
         default_layer { //layer 0
             bindings = <
-                &kp TAB           &kp Q    &kp W  &kp E      &kp R     &kp T                              &kp Y        &kp U  &lt 2 I       &kp O       &kp P           &kp BSPC
-                &mt LALT JP_ZKHK  &lt 4 A  &kp S  &kp D      &lt 3 F   &kp G                              &kp H        &kp J  &kp K         &kp L       &lt 2 JP_MINUS  &kp RET
-                &kp LGUI          &kp Z    &kp X  &kp C      &kp V     &kp B                              &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &lt 3 JP_SLASH  &kp DEL
-                                                  &lt 5 ESC  &kp LCTRL &lt 1 ESC                          &mt LSHIFT SPACE
+                &kp TAB           &kp Q    &kp W    &kp E        &kp R     &kp T                              &kp Y        &kp U  &lt 2 I       &kp O       &kp P               &kp BSPC
+                &mt LALT JP_ZKHK  &lt 4 A  &lt 2 S  &kp D        &lt 3 F   &kp G                              &kp H        &kp J  &kp K         &kp L       &mt LCTRL JP_MINUS  &kp RET
+                &kp LGUI          &kp Z    &kp X    &kp C        &kp V     &kp B                              &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &mt LSHFT JP_SLASH  &kp DEL
+                                                    &lt 5 SPACE  &kp LCTRL &lt 1 ESC                          &mt LSHIFT SPACE
             >;
+            /* &kp TAB            &kp Q    &kp W  &kp E      &kp R    &kp T                              &kp Y        &kp U  &lt 2 I       &kp O       &kp P           &kp BSPC */
+            /* &mt LCTRL JP_ZKHK  &lt 4 A  &kp S  &lt 6 D    &lt 3 F  &kp G                              &kp H        &kp J  &kp K         &kp L       &lt 2 JP_MINUS  &kp RET */
+            /* &kp LSHIFT         &kp Z    &kp X  &kp C      &kp V    &lt 5 B                            &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &lt 3 JP_SLASH  &kp DEL */
+            /*                                    &kp LGUI   &kp LALT &lt 1 ESC                          &kp SPACE */
             //sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
         /* layer 0
@@ -130,9 +134,9 @@
 
         NUM { //layer 2
             bindings = <
-                &trans  &none  &none         &none         &none         &none                            &none  &none         &none          &none         &none  &trans
-                &trans  &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none                            &none  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &none  &trans
-                &trans  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none                            &none  &kp NUMBER_0  &kp JP_COMMA   &kp JP_DOT    &none  &trans
+                &trans  &none  &none         &none         &none         &none                            &none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &trans
+                &trans  &none  &none         &none         &kp JP_COMMA  &none                            &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_COMMA  &trans
+                &trans  &none  &none         &none         &kp JP_DOT    &none                            &none         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_DOT    &trans
                                &trans        &trans        &trans                                         &trans
             >;
         };
@@ -142,7 +146,7 @@
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
          * ├───┼───┤   │   │ . │   │  │ 0 │ 4 │ 5 │ 6 ├───┼───┤
          * │Ctl│N/A├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
-         * ├───┼───┤   │   │   │   │  │   │ 1 │ 2 │ 3 ├───┼───┤
+         * ├───┼───┤   │   │ , │   │  │   │ 1 │ 2 │ 3 ├───┼───┤
          * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │   │                    
@@ -206,6 +210,27 @@
          * │Ctl│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
          * ├───┼───┤   │   │   │   │  │   │   │   │   ├───┼───┤
          * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤BCL│BCA│
+         * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
+         *             │   │   │   │  │   │                    
+         *             └───┴───┴───┘  └───┘                    
+         */
+
+        NUM { //layer 2
+            bindings = <
+                &trans  &none  &none         &none         &none         &none                            &none  &none         &none          &none         &none  &trans
+                &trans  &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none                            &none  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &none  &trans
+                &trans  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none                            &none  &kp NUMBER_0  &kp JP_COMMA   &kp JP_DOT    &none  &trans
+                               &trans        &trans        &trans                                         &trans
+            >;
+        };
+        /* layer 2(scroll)
+         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
+         * ┌───┬───┤   │   │   │   │  │   │ 7 │ 8 │ 9 ├───┬───┐
+         * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
+         * ├───┼───┤   │   │ . │   │  │ 0 │ 4 │ 5 │ 6 ├───┼───┤
+         * │Ctl│N/A├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
+         * ├───┼───┤   │   │   │   │  │   │ 1 │ 2 │ 3 ├───┼───┤
+         * │Sft│   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │   │                    
          *             └───┴───┴───┘  └───┘                    
