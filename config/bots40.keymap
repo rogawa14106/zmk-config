@@ -30,11 +30,11 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <2 3>;
+            key-positions = <1 2>;
         };
         bspc {
             bindings = <&kp BSPC>;
-            key-positions = <10 11>;
+            key-positions = <21 22>;
         };
         lang {
             bindings = <&kp JP_ZKHK>;
@@ -95,9 +95,9 @@
 
         default_layer { //layer 0
             bindings = <
-                &kp Q        &mt LALT W  &kp E        &kp R     &kp T       &trans                 &trans   &kp Y        &kp U  &lt 2 I       &mt LALT O  &kp P
-                &mt LSHFT A  &kp S       &lt 2 D      &lt 3 F   &kp G       &trans                 &trans   &kp H        &kp J  &kp K         &kp L       &mt LSHFT JP_MINUS
-                &mt LCTRL Z  &kp X       &kp C        &kp V     &kp B       &trans                 &lt 5 B  &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &mt LCTRL JP_SLASH
+                &kp Q        &mt LALT W  &kp E        &kp R     &kp T       &trans                 &trans  &kp Y        &kp U  &lt 2 I       &mt LALT O  &kp P
+                &mt LSHFT A  &kp S       &lt 2 D      &lt 3 F   &kp G       &trans                 &trans  &kp H        &kp J  &kp K         &kp L       &mt LSHFT JP_MINUS
+                &mt LCTRL Z  &kp X       &kp C        &kp V     &kp B       &lt 5 B                &trans  &kp N        &kp M  &kp JP_COMMA  &kp JP_DOT  &mt LCTRL JP_SLASH
                                                       &kp LGUI  &kp RET     &lt 1 ESC              &lt 4 SPACE
             >;
         };
