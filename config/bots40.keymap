@@ -28,9 +28,13 @@
     combos {
         compatible = "zmk,combos";
 
+        lang {
+            bindings = <&kp JP_ZKHK>;
+            key-positions = <13 14>;
+        };
         tab {
             bindings = <&kp TAB>;
-            key-positions = <1 2>;
+            key-positions = <14 15>;
         };
         bspc {
             bindings = <&kp BSPC>;
@@ -39,10 +43,6 @@
         del {
             bindings = <&kp DEL>;
             key-positions = <21 22>;
-        };
-        lang {
-            bindings = <&kp JP_ZKHK>;
-            key-positions = <13 14>;
         };
     };
 
