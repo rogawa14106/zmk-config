@@ -34,6 +34,10 @@
         };
         bspc {
             bindings = <&kp BSPC>;
+            key-positions = <20 21>;
+        };
+        del {
+            bindings = <&kp DEL>;
             key-positions = <21 22>;
         };
         lang {
@@ -56,7 +60,7 @@
                 , <&macro_release &kp LSHFT>
                 ;
         };
-         cg_kp: cg_kp {
+        cg_kp: cg_kp {
             label = "CG_KP";
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <16>;
@@ -138,7 +142,7 @@
         NUM { //layer 2
             bindings = <
                 &trans  &trans        &trans  &trans        &trans  &trans                         &trans  &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-                &trans  &kp JP_COLON  &trans  &kp JP_DOT    &trans  &trans                         &trans  &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans
+                &trans  &kp JP_COLON  &trans  &kp JP_DOT    &trans  &trans                         &trans  &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
                 &trans  &trans        &trans  &kp JP_COMMA  &trans  &trans                         &trans  &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
                                               &trans        &trans  &trans                         &trans
             >;
