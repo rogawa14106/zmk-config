@@ -82,41 +82,45 @@
 
         default_layer { //layer 0
             bindings = <
-                &lt 5 Q            &kp W  &kp E    &kp R             &kp T      &trans             &kp Y  &kp U  &lt 2 I       &kp O       &kp P         &kp BSPC
-                &mt LALT A         &kp S  &lt 2 D  &lt 3 F           &kp G      &trans             &kp H  &kp J  &kp K         &kp L       &kp JP_MINUS  &kp RET
-                &mt LCTRL JP_ZKHK  &kp Z  &kp X    &kp C             &kp V      &kp B              &kp N  &kp M  &kp JP_COMMA  &kp JP_DOT  &kp JP_SLASH  &kp LGUI
-                                                   &mt LALT JP_ZKHK  &lt 4 TAB  &lt 1 ESC          &mt LSHFT SPACE
+                &mt LALT Q         &kp W  &kp E    &kp R     &kp T      &lt 5              &kp Y  &kp U  &lt 2 I       &kp O       &kp P         &kp BSPC
+                &kp A              &kp S  &lt 4 D  &kp F     &kp G      &trans             &kp H  &kp J  &kp K         &kp L       &kp JP_MINUS  &kp RET
+                &mt LCTRL JP_ZKHK  &kp Z  &kp X    &kp C     &kp V      &kp B              &kp N  &kp M  &kp JP_COMMA  &kp JP_DOT  &kp JP_SLASH  &kp DEL
+                                                   &kp LGUI  &lt 4 TAB  &mt LSHFT ESC      &lt 2 SPACE
             >;
         };
         /* layer 0
-         *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
-         * ┌───┬───┤ W │ E │ R │ T │  │ Y │ U │ I │ O ├───┬───┐
-         * │Tab│ Q ├─2─┼───┼─3─┼───┤  ├───┼───┼───┼───┤ P │BS │
-         * ├Alt┼─4─┤ S │ D │ F │ G │  │ H │ J │ K │ L ├Ctr┼───┤
-         * │Z/H│ A ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ - │Ent
-         * ├───┼───┤ X │ C │ V │ B │  │ N │ M │ , │ . ├Sft┼───┤
-         * │GUI│ Z ├───┴───┴───┴───┘  └───┴───┴───┴───┤ / │Del│
-         * └───┴───┘   ┌─5─┬───┬─1─┐  ┌Sft┐           └───┴───┘
-         *             │Spc│Ctl│Esc│  │Spc│                    
+         *         ┌───┬───┬───┬─5─┐  ┌───┬───┬───┬───┐        
+         * ┌Alt┬───┤ E │ R │ T │   │  │ Y │ U │ I │ O ├───┬───┐
+         * │ Q │ W ├─2─┼───┼───┼───┤  ├───┼───┼───┼───┤ P │BSP│
+         * ├───┼───┤ D │ F │ G │   │  │ H │ J │ K │ L ├───┼───┤
+         * │ A │ S ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ - │Ent│
+         * ├───┼───┤ X │ C │ V │ B │  │ N │ M │ , │ . ├───┼───┤
+         * │Ctl│ Z ├───┴───┴───┴───┘  └───┴───┴───┴───┤ / │Del│
+         * └───┴───┘   ┌───┬─1─┬Sft┐  ┌─2─┐           └───┴───┘
+         *             │GUI│Tab│Esc│  │Spc│                    
          *             └───┴───┴───┘  └───┘                    
          */
 
         SYMBOL { //layer 1
             bindings = <
-                &s_kp N1        &s_kp N2     &s_kp N3       &s_kp N4       &s_kp N5        &trans            &s_kp N6       &s_kp N7        &s_kp N8       &s_kp N9      &s_kp JP_BSLH   &trans
-                &kp JP_CARET    &kp JP_AT    &kp JP_LBKT    &kp JP_RBKT    &kp JP_CARET    &trans            &kp JP_SEMI    &kp JP_COLON    &kp JP_BSLH    &s_kp JP_YEN  &s_kp JP_MINUS  &trans
-                &s_kp JP_CARET  &s_kp JP_AT  &s_kp JP_LBKT  &s_kp JP_RBKT  &s_kp JP_CARET  &trans            &s_kp JP_SEMI  &s_kp JP_COLON  &s_kp JP_COMMA &s_kp JP_DOT  &s_kp JP_SLASH  &trans
-                                                            &trans         &trans          &trans            &trans
+                &s_kp JP_CARET  &s_kp N2     &s_kp N3        &s_kp N4       &s_kp N5     &trans            &s_kp N6     &s_kp N8       &s_kp N9        &s_kp JP_YEN  &kp JP_BSLH     &trans
+                &s_kp N1        &kp JP_AT    &s_kp N7        &kp JP_CARET   &s_kp JP_AT  &trans            &kp JP_LBKT  &s_kp JP_LBKT  &s_kp JP_RBKT   &kp JP_RBKT   &s_kp JP_MINUS  &trans
+                &trans          &trans       &s_kp JP_COLON  &s_kp JP_SEMI  &trans       &trans            &kp JP_SEMI  &kp JP_COLON   &s_kp JP_COMMA  &s_kp JP_DOT  &s_kp JP_SLASH  &s_kp JP_BSLH
+                                                             &trans         &trans       &trans            &trans
             >;
         };
+                // &s_kp N1        &s_kp N2     &s_kp N3       &s_kp N4       &s_kp N5        &trans            &s_kp N6       &s_kp N7        &s_kp N8       &s_kp N9      &s_kp JP_BSLH   &trans
+                // &kp JP_CARET    &kp JP_AT    &kp JP_LBKT    &kp JP_RBKT    &kp JP_CARET    &trans            &kp JP_SEMI    &kp JP_COLON    &kp JP_BSLH    &s_kp JP_YEN  &s_kp JP_MINUS  &trans
+                // &s_kp JP_CARET  &s_kp JP_AT  &s_kp JP_LBKT  &s_kp JP_RBKT  &s_kp JP_CARET  &trans            &s_kp JP_SEMI  &s_kp JP_COLON  &s_kp JP_COMMA &s_kp JP_DOT  &s_kp JP_SLASH  &trans
+                //                                             &trans         &trans          &trans            &trans
         /* layer 1
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
-         * ┌───┬───┤ " │ # │ $ │ % │  │ & │ ' │ ( │ ) ├───┬───┐
-         * │Tab│ ~ ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ _ │   │
-         * ├───┼───┤ @ │ [ │ ] │ ^ │  │ ; │ : │ \ │ | ├───┼───┤
-         * │   │ ! ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ = │   │
-         * ├───┼───┤ ` │ { │ } │ ~ │  │ + │ * │ < │ > ├───┼───┤
-         * │   │   ├───┴───┴───┴───┘  └───┴───┴───┴───┤ ? │   │
+         * ┌───┬───┤ # │ $ │ % │   │  │ & │ ( │ ) │ | ├───┬───┐
+         * │ ~ │ " ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ \ │   │
+         * ├───┼───┤ ' │ ^ │ ` │   │  │ [ │ { │ } │ ] ├───┼───┤
+         * │ ! │ @ ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ = │   │
+         * ├───┼───┤ * │ + │   │   │  │ ; │ : │ < │ > ├───┼───┤
+         * │   │   ├───┴───┴───┴───┘  └───┴───┴───┴───┤ ? │ _ │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │   │                    
          *             └───┴───┴───┘  └───┘                    
@@ -124,21 +128,21 @@
 
         NUM { //layer 2
             bindings = <
-                &trans  &trans        &trans  &trans        &trans  &trans                         &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans        &trans
-                &trans  &kp JP_COLON  &trans  &kp JP_DOT    &trans  &trans                         &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0  &trans
-                &trans  &trans        &trans  &kp JP_COMMA  &trans  &trans                         &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &trans
-                                              &trans        &trans  &trans                         &trans
+                &kp F1  &kp F2   &kp F3   &kp F4  &kp F5  &trans                         &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+                &kp N1  &kp N2   &kp N3   &kp N4  &kp N5  &trans                         &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
+                &trans  &kp F11  &kp F12  &trans  &trans  &trans                         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+                                          &trans  &trans  &trans                         &trans
             >;
         };
 
         /* layer 2(scroll)
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
-         * ┌───┬───┤   │   │   │   │  │   │ 7 │ 8 │ 9 ├───┬───┐
-         * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
-         * ├───┼───┤   │   │   │   │  │ 0 │ 4 │ 5 │ 6 ├───┼───┤
+         * ┌───┬───┤   │   │   │   │  │   │   │   │   ├───┬───┐
          * │   │   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
-         * ├───┼───┤ : │ , │ . │   │  │00 │ 1 │ 2 │ 3 ├───┼───┤
-         * │   │N/A├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
+         * ├───┼───┤ 3 │ 4 │ 5 │   │  │ 6 │ 7 │ 8 │ 9 ├───┼───┤
+         * │ 1 │ 2 ├───┼───┼───┼───┤  ├───┼───┼───┼───┤ 0 │   │
+         * ├───┼───┤   │   │   │   │  │ ← │ ↓ │ ↑ │ → ├───┼───┤
+         * │   │   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │   │                    
          *             └───┴───┴───┘  └───┘                    
@@ -146,10 +150,10 @@
 
         MOUSE { //layer 3
             bindings = <
-                &trans   &trans    &mkp MB3  &trans   &trans  &trans                               &mkp MB4        &trans          &trans        &mkp MB5         &trans  &trans
-                &trans   &mkp MB1  &mkp MB2  &trans   &trans  &trans                               &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
-                &trans   &trans    &trans    &trans   &trans  &trans                               &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
-                                             &trans   &trans  &trans                               &trans
+                &trans   &trans  &trans  &trans  &trans  &trans                               &trans  &trans    &trans    &trans    &trans  &trans
+                &trans   &trans  &trans  &trans  &trans  &trans                               &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans  &trans
+                &trans   &trans  &trans  &trans  &trans  &trans                               &trans  &trans    &trans    &trans    &trans  &trans
+                                         &trans  &trans  &trans                               &trans
             >;
         };
         /* layer 3
@@ -167,9 +171,9 @@
 
         FUNCTION { //layer 4
             bindings = <
-                &trans  &kp F7  &kp F8  &kp F9  &kp F12  &trans                                    &cg_kp LEFT_ARROW &cg_kp F4       &cg_kp D      &cg_kp RIGHT_ARROW  &kp PSCRN  &kp DEL
-                &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans                                    &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW     &kp INS    &trans
-                &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans                                    &kp PG_UP         &kp END         &kp HOME      &kp PG_DN           &trans     &trans
+                &trans  &kp F7  &kp F8  &kp F9  &kp F12  &trans                                    &cg_kp LEFT_ARROW &cg_kp F4  &cg_kp D   &cg_kp RIGHT_ARROW  &kp PSCRN  &trans
+                &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans                                    &mkp MB4          &kp PG_DN  &kp PG_UP  &mkp MB5            &kp INS    &trans
+                &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans                                    &trans            &kp END    &kp HOME   &trans              &trans     &trans
                                         &trans  &trans   &trans                                    &trans
             >;
         };
@@ -177,9 +181,9 @@
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐          M1: Win-Ctrl-Left
          * ┌───┬───┤F9 │F10│F11│F12│  │M1 │M2 │M3 │M4 ├───┬───┐  M2: Win-Ctrl-F4
          * │Tab│   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤Prs│   │  M4: Win-Ctrl-D
-         * ├───┼───┤F5 │F6 │F7 │F8 │  │ ← │ ↓ │ ↑ │ → ├───┼───┤  M3: Win-Ctrl-Right
+         * ├───┼───┤F5 │F6 │F7 │F8 │  │MB4│PDn│PUp│MB5├───┼───┤  M3: Win-Ctrl-Right
          * │   │   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤Ins│   │
-         * ├───┼───┤F1 │F2 │F3 │F4 │  │Pdn│End│Hom│Pup├───┼───┤
+         * ├───┼───┤F1 │F2 │F3 │F4 │  │   │End│Hom│   ├───┼───┤
          * │   │   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │   │
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │N/A│                    
@@ -187,20 +191,20 @@
          */
         MANAGEMENT { //layer 5
             bindings = <
-                &trans       &trans  &trans  &trans  &trans  &trans                                &trans    &trans        &trans        &trans        &trans          &trans
-                &trans       &trans  &trans  &trans  &trans  &trans                                &ind_bat  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &bt BT_CLR      &trans
-                &bootloader  &trans  &trans  &trans  &trans  &trans                                &ind_con  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR_ALL  &trans
-                                             &trans  &trans  &trans                                &trans
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans                  &trans  &trans  &trans  &trans  &trans  &bt BT_CLR
+                &trans        &trans        &trans        &trans        &trans        &ind_con                &trans  &trans  &trans  &trans  &trans  &trans
+                &bootloader   &trans        &trans        &trans        &trans        &ind_bat                &trans  &trans  &trans  &trans  &trans  &bt BT_CLR_ALL
+                                                          &trans        &trans        &trans                  &trans
             >;
         };
         /* layer 5
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
-         * ┌───┬───┤   │   │   │   │  │BT1│BT2│BT3│BT4├───┬───┐
-         * │Tab│BTL├───┼───┼───┼───┤  ├───┼───┼───┼───┤BT5│   │
+         * ┌───┬───┤   │   │   │   │  │   │   │   │   ├───┬───┐
+         * │Tab│BTL├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │BCL│
          * ├───┼───┤   │   │   │   │  │   │   │   │   ├───┼───┤
          * │   │   ├───┼───┼───┼───┤  ├───┼───┼───┼───┤   │   │
          * ├───┼───┤   │   │   │   │  │   │   │   │   ├───┼───┤
-         * │   │   ├───┴───┴───┴───┘  └───┴───┴───┴───┤BCL│BCA│
+         * │   │   ├───┴───┴───┴───┘  └───┴───┴───┴───┤   │BCA│
          * └───┴───┘   ┌───┬───┬───┐  ┌───┐           └───┴───┘
          *             │   │   │   │  │   │                    
          *             └───┴───┴───┘  └───┘                    
