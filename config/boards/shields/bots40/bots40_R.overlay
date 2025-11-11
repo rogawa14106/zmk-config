@@ -1,4 +1,5 @@
 #include "bots40.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -14,10 +15,26 @@
             ;
 };
 
+
+&zip_temp_layer {
+    // ここで指定したキー以外のキーを押したときにマウスレイヤーから抜ける
+    excluded-positions = <
+        21 /*K(MB1)*/
+        22 /*L(MB3)*/
+        23 /*-(MB2)*/
+        25 /*Ctrl*/
+        39 /*Shift*/
+    >;
+};
+
 / {
-    trackball_listener {
+    // trackball_listener {
+    trackball_listener: trackball_listener{
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        // トラボを使用してから1000msの間、マウスレイヤーを有効にする
+        input-processors = <&zip_temp_layer 3 1000>;
     };
 };
 
@@ -58,7 +75,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <3>;
+        // automouse-layer = <3>;
         scroll-layers = <4>;
     };
 };
