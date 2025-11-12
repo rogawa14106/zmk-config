@@ -66,23 +66,23 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
+        // to_layer_0: to_layer_0 {
+        //     compatible = "zmk,behavior-macro-one-param";
+        //     #binding-cells = <1>;
+        //     bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        //     label = "TO_LAYER_0";
+        // };
     };
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+        // lt_to_layer_0: lt_to_layer_0 {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     label = "LAYER_TAP_TO_0";
+        //     bindings = <&mo>, <&to_layer_0>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <200>;
+        // };
     };
 
     keymap {
@@ -91,7 +91,7 @@
         default_layer { //layer 0
             bindings = <
                 &mt LALT Q  &kp W  &kp E    &kp R     &kp T      &lt 5 T            &kp Y  &kp U  &lt 4 I       &kp O       &kp P         &kp BSPC
-                &kp A       &kp S  &lt 4 D  &kp F     &kp G      &trans             &kp H  &kp J  &kp K         &kp L       &kp JP_MINUS  &kp RET
+                &kp A       &kp S  &lt 4 D  &kp F     &kp G      &to 0             &kp H  &kp J  &kp K         &kp L       &kp JP_MINUS  &kp RET
                 &kp LCTRL   &kp Z  &kp X    &kp C     &kp V      &kp B              &kp N  &kp M  &kp JP_COMMA  &kp JP_DOT  &kp JP_SLASH  &kp DEL
                                             &kp LGUI  &lt 1 TAB  &mt LSHFT ESC      &lt 2 SPACE
             >;
@@ -117,10 +117,6 @@
                                                              &trans         &trans       &trans            &trans
             >;
         };
-                // &s_kp N1        &s_kp N2     &s_kp N3       &s_kp N4       &s_kp N5        &trans            &s_kp N6       &s_kp N7        &s_kp N8       &s_kp N9      &s_kp JP_BSLH   &trans
-                // &kp JP_CARET    &kp JP_AT    &kp JP_LBKT    &kp JP_RBKT    &kp JP_CARET    &trans            &kp JP_SEMI    &kp JP_COLON    &kp JP_BSLH    &s_kp JP_YEN  &s_kp JP_MINUS  &trans
-                // &s_kp JP_CARET  &s_kp JP_AT  &s_kp JP_LBKT  &s_kp JP_RBKT  &s_kp JP_CARET  &trans            &s_kp JP_SEMI  &s_kp JP_COLON  &s_kp JP_COMMA &s_kp JP_DOT  &s_kp JP_SLASH  &trans
-                //                                             &trans         &trans          &trans            &trans
         /* layer 1
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
          * ┌───┬───┤ # │ $ │ % │   │  │ & │ ( │ ) │ | ├───┬───┐
@@ -142,7 +138,6 @@
                                           &trans  &trans  &trans                         &trans
             >;
         };
-
         /* layer 2(scroll)
          *         ┌───┬───┬───┬───┐  ┌───┬───┬───┬───┐        
          * ┌───┬───┤   │   │   │   │  │   │   │   │   ├───┬───┐
