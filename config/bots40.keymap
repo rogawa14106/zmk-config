@@ -90,8 +90,8 @@
 
         default_layer { //layer 0
             bindings = <
-                &mt LALT Q  &kp W  &kp E    &kp R     &kp T      &lt 5 T            &kp Y  &kp U  &lt 4 I       &kp O       &kp P         &kp BSPC
-                &kp A       &kp S  &lt 4 D  &kp F     &kp G      &to 0             &kp H  &kp J  &kp K         &kp L       &kp JP_MINUS  &kp RET
+                &mt LALT Q  &kp W  &kp E    &kp R     &kp T      &mo 5              &kp Y  &kp U  &kp I         &lt 4 O     &kp P         &kp BSPC
+                &kp A       &kp S  &lt 4 D  &kp F     &kp G      &to 0              &kp H  &kp J  &kp K         &kp L       &kp JP_MINUS  &kp RET
                 &kp LCTRL   &kp Z  &kp X    &kp C     &kp V      &kp B              &kp N  &kp M  &kp JP_COMMA  &kp JP_DOT  &kp JP_SLASH  &kp DEL
                                             &kp LGUI  &lt 1 TAB  &mt LSHFT ESC      &lt 2 SPACE
             >;
@@ -153,10 +153,10 @@
 
         MOUSE { //layer 3
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &trans                               &trans  &trans    &trans    &trans    &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans                               &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans                               &trans  &trans    &trans    &trans    &trans  &trans
-                                        &trans  &trans  &trans                               &trans
+                &trans  &trans  &trans  &trans    &trans  &trans                               &trans  &trans    &trans    &trans    &trans    &trans
+                &trans  &trans  &trans  &mkp MB1  &trans  &trans                               &trans  &mkp MB1  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+                &trans  &trans  &trans  &trans    &trans  &trans                               &trans  &trans    &trans    &trans    &trans    &trans
+                                        &trans    &trans  &trans                               &trans
             >;
         };
         /* layer 3
