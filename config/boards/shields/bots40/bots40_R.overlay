@@ -28,7 +28,7 @@
 
 &zip_temp_layer {
     // キー入力後指定した秒数の間はAMLを発動しないようにする
-    require-prior-idle-ms = <200>;
+    require-prior-idle-ms = <500>;
     // ここで指定したキー以外のキーを押したときにマウスレイヤーから抜ける
     excluded-positions = <
         19 /*J(MB1)*/
